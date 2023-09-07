@@ -1,0 +1,24 @@
+
+    public void boxOval(Graphics g, Rectangle bb) {
+        g.fillOval(bb.x, bb.y, bb.width, bb.height);
+    }
+
+    public void mickey(Graphics g, Rectangle bb){
+        boxOval(g, bb);
+        int dx = bb.width / 2;
+        int dy = bb.height / 2;
+        Rectangle half = new Rectangle(bb.x, bb.y, dx, dy);
+
+        half.translate(-dx/2, -dy/2);
+        System.out.println(-dy/2 + " space " + dy);
+        g.setColor(Color.blue);
+        boxOval(g, half);
+
+        half.translate(dx * 2, 0);
+        g.setColor(Color.red);
+        boxOval(g, half);
+    }
+    public void paint(Graphics g){
+        Rectangle rectangle = new Rectangle(100, 100, 100, 100);
+        mickey(g, rectangle);
+    }
