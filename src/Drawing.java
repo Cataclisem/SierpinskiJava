@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Drawing extends Canvas{
 
@@ -13,10 +12,10 @@ public class Drawing extends Canvas{
         canvas.setSize(canvasWidth,canvasHeight);
         frame.add(canvas);
         frame.pack();
-        frame.setVisible(true);
+        frame.setVisible(false);
     }
 
-    public void bigTriangle(){
+    public ArrayList bigTriangle(){
         java.util.List<Integer> bottomLeft = new ArrayList<Integer>();
         bottomLeft.add(10);
         bottomLeft.add(10);
@@ -29,13 +28,23 @@ public class Drawing extends Canvas{
         triangleTop.add(canvasWidth / 2);
         triangleTop.add(canvasHeight - 10);
 
-        System.out.println(triangleTop.get(0));
+        ArrayList<Object> bigTrianCoor = new ArrayList<>();
+
+        bigTrianCoor.add(bottomLeft);
+        bigTrianCoor.add(bottomRight);
+        bigTrianCoor.add(triangleTop);
+
+        System.out.println("Hi");
+        Test.hulu();
+
+        return bigTrianCoor;
     }
 
     public void paint(Graphics g){
-        g.fillOval(0,0, 10, 10);
-        g.drawLine(100,100, 0, 300);
-        g.setColor(Color.red);
-        g.fillOval(100,100, 10, 10);
+        //g.fillOval(0,0, 10, 10);
+        //g.drawLine(100,100, 0, 300);
+        //g.setColor(Color.red);
+        //g.fillOval(100,100, 10, 10);
+        bigTriangle();
     }
 }
